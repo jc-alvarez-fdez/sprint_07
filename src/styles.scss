@@ -1,0 +1,23 @@
+// Variable overrides first
+// $primary: #900;
+// $enable-shadows: true;
+// $prefix: "mo-";
+// $bs-body-font-family: "Anta", sans-serif;
+
+//$font-family-base: 'Anta', sans-serif;
+$font-family-sans-serif: 'Barlow', sans-serif;
+
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+* {
+ font-family: 'Barlow', sans-serif;
+}
+
+h3 {
+  font-family: "Anta", sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

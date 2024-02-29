@@ -1,0 +1,18 @@
+<header class="row">
+  <div id="social" class="col">
+    social
+  </div>
+
+  <div class="col">
+    <img src="../assets/img/star-wars.svg" width= 360px alt="logo scroll">
+  </div>
+
+  <div>
+    <nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="user">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" [routerLink]="['/account/login']">Login</a>
+        <a class="nav-item nav-link" [routerLink]="['/account/register']">Register</a>
+      </div>
+    </nav>
+  </div>
+</header>
