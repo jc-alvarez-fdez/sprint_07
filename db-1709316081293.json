@@ -11,6 +11,13 @@
       "email": "mail1@mail.com",
       "password": "$2a$10$gtyub2nuagacS9GNsofGUevSabzUQbVy/DY.y.4FFXFstF9a60Lyy",
       "id": 2
+    },
+    {
+      "email": "mail3@mail.com",
+      "password": "$2a$10$IFWr2d7fTOhttyyXd5hIXettlRiGXh5Eu.Ipf31H7SdYJSlxt0iPK",
+      "firstName": "name3",
+      "lastName": "lastname3",
+      "id": 3
     }
   ]
 }

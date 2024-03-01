@@ -25,14 +25,23 @@ export class AccountService {
     }
 
     login(email: string, password: string) {
-        return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { email, password })
-            .pipe(map(user => {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
-                localStorage.setItem('user', JSON.stringify(user));
-                this.userSubject.next(user);
-                return user;
-            }));
-    }
+      return this.http.post<any>(`${environment.apiUrl}/login`, { email, password })
+          .pipe(map(response => {
+              const token = response.accessToken; // Asegúrate de verificar la respuesta real del servidor
+              if (!token) {
+                  throw new Error('Token not found in server response');
+              }
+              let user: User = response.user;
+              user.token = token;
+              localStorage.setItem('user', JSON.stringify(user));
+              this.userSubject.next(user);
+
+              const redirectUrl = '/starships';
+              this.router.navigate([redirectUrl]);
+
+              return user;
+          }));
+  }
 
     logOut() {
         // remove user from local storage and set current user to null
@@ -42,6 +51,22 @@ export class AccountService {
     }
 
     register(user: User) {
-      return this.http.post(`${environment.apiUrl}/users/register`, user);
-    }
+      return this.http.post<any>(`${environment.apiUrl}/register`, user)
+      .pipe(map(response => {
+          const token = response.accessToken; // Asegúrate de verificar la respuesta real del servidor
+          if (!token) {
+              throw new Error('Token not found in server response');
+          }
+
+          let user: User = response.user;
+          user.token = token;
+          localStorage.setItem('user', JSON.stringify(user));
+          this.userSubject.next(user);
+
+          const redirectUrl = '/starships';
+          this.router.navigate([redirectUrl]);
+
+          return user;
+      }));
+  }
 }

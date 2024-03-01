@@ -18,6 +18,13 @@
       "firstName": "name3",
       "lastName": "lastname3",
       "id": 3
+    },
+    {
+      "email": "mail4@mail.com",
+      "password": "$2a$10$njcgmccm6Ynhsj5DWqY9d.odjhOpH/qwCZTLFVdP9xkECE1SLNJ56",
+      "firstName": "name4",
+      "lastName": "last4",
+      "id": 4
     }
   ]
 }

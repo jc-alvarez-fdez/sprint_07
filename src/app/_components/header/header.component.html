@@ -1,18 +1,28 @@
-<header class="row">
-  <div id="social" class="col">
-    social
+<header class="container-fluid">
+  <div class="row text-light py-3 d-sm-flex flex-sm-wrap">
+    <div class="col-sm-4 mb-3 mb-sm-0"></div>
+    <div class="col d-flex justify-content-center mt-3 mb-2 mb-sm-0">
+      <img src="../../../assets/img/Star_Wars_Logo.svg" routerLink="/home" alt="Star Wars Logo" class="logo-starwars"/>
+    </div>
+    <div class="col-sm-4 d-sm-flex flex-sm-wrap text-center justify-content-end align-items-center mt-3 pe-sm-5">
+      @if (user) {
+        <span class="login-button text-warning">HI {{ getUserName()?.toLocaleUpperCase() }}!</span>
+      }
+      <i class="fa-solid fa-user mx-2"></i>
+      <button class="btn login-button" type="button" routerLink="/account/login" (click)="toggleLogin()">
+        {{ user ? 'LOG OUT' : 'LOG IN' }}
+      </button>
+    </div>
   </div>
-
-  <div class="col">
-    <img src="../assets/img/star-wars.svg" width= 360px alt="logo scroll">
-  </div>
-
-  <div>
-    <nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="user">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" [routerLink]="['/account/login']">Login</a>
-        <a class="nav-item nav-link" [routerLink]="['/account/register']">Register</a>
+  <div class="row">
+    <nav class="navbar navbar-expand nav-tb-line mt-3 mb-2 px-0 py-0">
+      <div class="navbar-nav mx-auto text-center">
+        <a class="nav-item nav-link nav-home my-auto px-3" routerLink="/">HOME</a>
+        <a class="nav-item nav-link nav-starships px-3" routerLink="/starships">STARSHIPS</a>
       </div>
     </nav>
+  </div>
+  <!-- main app container -->
+  <div class="container">
   </div>
 </header>

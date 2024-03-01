@@ -1,32 +1,51 @@
 <div class="container col-md-6 offset-md-3 mt-5">
-  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-  <div *ngIf="success" class="alert alert-success">{{success}}</div>
-  <div class="card">
-      <h4 class="card-header">Login</h4>
-      <div class="card-body">
-          <form [formGroup]="form" (ngSubmit)="onSubmit()">
-              <div class="mb-3">
-                  <label class="form-label">email</label>
-                  <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                      <div *ngIf="f.email.errors.required">email is required</div>
-                  </div>
-              </div>
-              <div class="mb-3">
-                  <label class="form-label">Password</label>
-                  <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                      <div *ngIf="f.password.errors.required">Password is required</div>
-                  </div>
-              </div>
-              <div>
-                  <button [disabled]="loading" class="btn btn-primary">
-                      <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
-                      Login
-                  </button>
-                  <a [routerLink]="['../register']" class="btn btn-link">Register</a>
-              </div>
-          </form>
-      </div>
+  @if (error) {
+    <div class="alert alert-danger">{{error}}</div>
+  }
+  @if (success) {
+    <div class="alert alert-success">{{success}}</div>
+  }
+  <div class="card rounded-5">
+    <div class="mx-4">
+      <h3 class="mx-4 mt-5 mb-3">Enter your email & password</h3>
+      <p class="mx-4 mb-4">Log into your Star Wars account. If you don't have one, you will be prompted to create one.</p>
+    </div>
+    <div class="card-body mx-4">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="text-center">
+        <div class="mb-3">
+          <input type="email" formControlName="email" class="form-control py-3 bg-body-secondary border-0" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          @if (submitted && f.email.errors) {
+            <div class="invalid-feedback">
+              @if (f.email.errors.required) {
+                <div>Email is required</div>
+              }
+            </div>
+          }
+        </div>
+        <div class="mb-3">
+          <input type="password" formControlName="password" class="form-control py-3 bg-body-secondary border-0" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          @if (submitted && f.password.errors) {
+            <div class="invalid-feedback">
+              @if (f.password.errors.required) {
+                <div>Password is required</div>
+              }
+              @if (submitted && f.email.errors && f.email.errors.pattern) {
+                <div>Invalid email format</div>
+              }
+            </div>
+          }
+        </div>
+        <div>
+          <button [disabled]="loading" class="btn btn-lg btn-warning rounded-pill form-control mt-4">
+            @if (loading) {
+              <span class="spinner-border spinner-border-sm"></span>
+            }
+            Login
+          </button>
+          <a routerLink="../register" class="btn btn-link mt-3 mb-4">Register</a>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
+
