@@ -1,10 +1,37 @@
-// Variable overrides first
-// $primary: #900;
-// $enable-shadows: true;
-// $prefix: "mo-";
-// $bs-body-font-family: "Anta", sans-serif;
 
-//$font-family-base: 'Anta', sans-serif;
+// scss-docs-start theme-color-variables
+$primary:       #ffe91f;
+// $secondary:     $gray-600 !default;
+// $success:       $green !default;
+// $info:          $cyan !default;
+// $warning:       $yellow !default;
+// $danger:        $red !default;
+// $light:         $gray-100 !default;
+// $dark:          $gray-900 !default;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  // "secondary":  $secondary,
+  // "success":    $success,
+  // "info":       $info,
+  // "warning":    $warning,
+  // "danger":     $danger,
+  // "light":      $light,
+  // "dark":       $dark
+);
+
+
+
+:root{
+  --semiblanc: #ffffff9d;
+  --starwars:  #ffe91f;
+  --bs-link-hover-color-rgb: $primary;
+}
+
+
+
 $font-family-sans-serif: 'Barlow', sans-serif;
 
 
@@ -19,5 +46,12 @@ h3 {
   font-family: "Anta", sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background-color: black;
+ }
+
+ .destaca {
+  color: $primary;
+ }
+
+

@@ -1,9 +1,12 @@
-<section class="p-4 px-8 pb-10 flex flex-col items-center gap-10">
-  <div class="text">
-    <h1>Presentación</h1>
-
+<section>
+  <div class="row img">
+    <img class="img-fluid" src="../../../assets/img/the-mandalorian-recap-dark-troopers_1ddc31d3.jpeg">
   </div>
-  <button type="button" class="uppercase w-fit mt-4" id="starships-button">
-    <a [routerLink]="['/starships']" routerLinkActive="router-link-active" >Browse Starships</a>
-  </button>
+  <div class="row contenido">
+    <h1>Presentación</h1>
+    <button type="button" class="btn btn-primary w-fit mt-4" id="starships-button">
+      <a class="btn" [routerLink]="['/starships']">Browse Starships</a>
+    </button>
+  </div>
 </section>
+

@@ -1,0 +1,31 @@
+.row {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#user_auth {
+  margin-top: 0;
+  letter-spacing: 0.1em;
+  color: var(--semiblanc);
+}
+
+img {
+  width: 60%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.bi.bi-person-fill-down {
+  color: var(--primary);
+}
+
+.bi.bi-person-fill-up {
+  color: white;
+}

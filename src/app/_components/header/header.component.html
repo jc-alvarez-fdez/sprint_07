@@ -1,28 +1,32 @@
-<header class="container-fluid">
-  <div class="row text-light py-3 d-sm-flex flex-sm-wrap">
-    <div class="col-sm-4 mb-3 mb-sm-0"></div>
-    <div class="col d-flex justify-content-center mt-3 mb-2 mb-sm-0">
-      <img src="../../../assets/img/Star_Wars_Logo.svg" routerLink="/home" alt="Star Wars Logo" class="logo-starwars"/>
-    </div>
-    <div class="col-sm-4 d-sm-flex flex-sm-wrap text-center justify-content-end align-items-center mt-3 pe-sm-5">
-      @if (user) {
-        <span class="login-button text-warning">HI {{ getUserName()?.toLocaleUpperCase() }}!</span>
-      }
-      <i class="fa-solid fa-user mx-2"></i>
-      <button class="btn login-button" type="button" routerLink="/account/login" (click)="toggleLogin()">
+<header class="row">
+
+  <div class="col-2" id="social">
+    Social media
+  </div>
+
+  <div class="col-8" id="logo">
+    <a [routerLink]='["/home"]'><img src="../../../assets/img/Star_Wars_Logo.svg" alt="Star Wars Logo" class="logo-starwars"/></a>
+  </div>
+
+  <div class="col-2">
+    <button class="btn login-button" type="button" [routerLink]='["/account/login"]' (click)="toggleLogin()">
+      <span>
         {{ user ? 'LOG OUT' : 'LOG IN' }}
-      </button>
-    </div>
+      </span>
+      <i class="fa-solid fa-user mx-2"></i>
+      <i [ngClass]="{'bi bi-person-fill-down': user, 'bi bi-person-up': !user}"></i>
+    </button>
   </div>
-  <div class="row">
-    <nav class="navbar navbar-expand nav-tb-line mt-3 mb-2 px-0 py-0">
-      <div class="navbar-nav mx-auto text-center">
-        <a class="nav-item nav-link nav-home my-auto px-3" routerLink="/">HOME</a>
-        <a class="nav-item nav-link nav-starships px-3" routerLink="/starships">STARSHIPS</a>
-      </div>
-    </nav>
-  </div>
-  <!-- main app container -->
-  <div class="container">
-  </div>
+
+  <!--intentar con css el cambio de icono-->
+
 </header>
+
+<div class="row" id="user_auth">
+  @if (user) {
+    <p>
+      ¡Que la Fuerza te acompañe, joven <span class="destaca">{{ getUserName() | uppercase }}</span>!
+    </p>
+  }
+</div>
+
