@@ -22,6 +22,11 @@ export const routes: Routes = [
   },
   { path: 'account/register',
   component: RegisterComponent
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   }
 
 ];
