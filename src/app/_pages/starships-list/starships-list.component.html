@@ -1,16 +1,18 @@
+<section>
 <ul class="row">
-  @for (starship of starships; track starship.id) {
-      <li class="card" (click)="viewShip(starship.id)">
-        <h3>{{ starship.name }}</h3>
-        <p>{{ starship.model }}</p>
-      </li>
+    @for (starship of starships; track starship.id) {
+        <li class="card" (click)="viewShip(starship.id)">
+          <h3>{{ starship.name }}</h3>
+          <p>{{ starship.model }}</p>
+        </li>
+    }
+  </ul>
+
+  @if (loadMore){
+    <button (click)="loadMoreStarships()">View more</button>
   }
-</ul>
 
-@if (loadMore){
-  <button (click)="loadMoreStarships()">View more</button>
-}
-
-<!--
-Posteriormente implementar scroll automático
--->
+  <!--
+  Posteriormente implementar scroll automático
+  -->
+</section>

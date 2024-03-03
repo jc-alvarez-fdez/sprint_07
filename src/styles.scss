@@ -40,7 +40,12 @@ $font-family-sans-serif: 'Barlow', sans-serif;
 
 * {
  font-family: 'Barlow', sans-serif;
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
 }
+
+html, body { height: 100%; }
 
 h3 {
   font-family: "Anta", sans-serif;
@@ -53,4 +58,10 @@ body {
  .destaca {
   color: $primary;
  }
+
+ .btn:hover {
+  background-color: rgba(176, 176, 176, 0.967);
+  border: 2px solid var(--starwars);
+  font-weight: bold;
+}
 

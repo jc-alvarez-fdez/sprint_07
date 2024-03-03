@@ -5,10 +5,10 @@
   @if (success) {
     <div class="alert alert-success">{{success}}</div>
   }
-  <div class="card rounded-5">
+  <div class="card rounded-5 text-center">
     <div class="mx-4">
-      <h3 class="mx-4 mt-5 mb-3">Introduzca su email y contraseña</h3>
-      <p class="mx-4 mb-4">Log into your Star Wars account. If you don't have one, you will be prompted to create one.</p>
+      <h3 class="mx-4 mt-5 mb-3">Introduce tu email y contraseña</h3>
+      <p class="mx-4 mb-4">Inicia sesión en tu cuenta de Star Wars. Si no dispones de una, regístrate.</p>
     </div>
     <div class="card-body mx-4">
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="text-center">
@@ -17,35 +17,38 @@
           @if (submitted && f.email.errors) {
             <div class="invalid-feedback">
               @if (f.email.errors.required) {
-                <div>Email is required</div>
+                <div>El email es obligatorio</div>
               }
             </div>
           }
         </div>
         <div class="mb-3">
-          <input type="password" formControlName="password" class="form-control py-3 bg-body-secondary border-0" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <input type="password" formControlName="password" class="form-control py-3 bg-body-secondary border-0" placeholder="Contraseña" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
           @if (submitted && f.password.errors) {
             <div class="invalid-feedback">
               @if (f.password.errors.required) {
-                <div>Password is required</div>
+                <div>La contraseña es obligatoria</div>
               }
               @if (submitted && f.email.errors && f.email.errors.pattern) {
-                <div>Invalid email format</div>
+                <div>El email no tiene un formato correcto</div>
               }
             </div>
           }
         </div>
         <div>
-          <button [disabled]="loading" class="btn btn-lg btn-warning rounded-pill form-control mt-4">
+          <button [disabled]="loading" class="btn btn-primary rounded-pill form-control mt-4">
             @if (loading) {
               <span class="spinner-border spinner-border-sm"></span>
             }
-            Login
+            Identifícate
           </button>
-          <a routerLink="../register" class="btn btn-link mt-3 mb-4">Register</a>
+          <a routerLink="../register" class="btn btn-link mt-3 mb-4">Regístrate</a>
         </div>
       </form>
     </div>
   </div>
 </div>
+
+
+
 
