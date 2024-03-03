@@ -11,9 +11,9 @@
   <div class="col-2">
     <button class="btn login-button" type="button" [routerLink]='["/account/login"]' (click)="toggleLogin()">
       <span>
-        {{ user ? 'LOG OUT' : 'LOG IN' }}
+        {{ user ? 'DESCONECTA' : 'ACCEDE' }}
       </span>
-      <i class="fa-solid fa-user mx-2"></i>
+      <i></i>
       <i [ngClass]="{'bi bi-person-fill-down': user, 'bi bi-person-up': !user}"></i>
     </button>
   </div>

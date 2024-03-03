@@ -15,13 +15,14 @@ export const routes: Routes = [
    canActivate: [AuthGuard]
    },
   { path: 'starships/:id',
-    component: StarshipFileComponent
+    component: StarshipFileComponent,
+    canActivate: [AuthGuard]
   },
   { path: 'account/login',
     component: LoginComponent
   },
   { path: 'account/register',
-  component: RegisterComponent
+    component: RegisterComponent
   },
   {
     path: '',

@@ -1,25 +1,27 @@
 <section>
-  <h2 class="section-title px-4 mb-6 laptop:mb-8">STARSHIP</h2>
-  <div class="flex flex-col tablet:flex-row starship-file overflow-hidden">
-    <div class="starship-file-image flex justify-center items-center">
-      <img [src]="starship.imageURL" alt="Starship photo">
+  <article class="row">
+    <h4>STARSHIP</h4>
+    <div class="nave">
+      <div class="col-6">
+        <img class="img-fluid" [src]="starship.imageURL" alt="Starship photo">
+      </div>
+      <div class="col-6 contenido">
+        <h3>{{starship.name }}</h3>
+        <p>Cada nave tiene unas características tecnológicas únicas que reflejan su facción y era.</p>
+        <ul class="grid grid-cols-1 laptop:grid-cols-2 gap-2">
+          <li>Modelo: <span>{{starship.model }}</span></li>
+          <li>Coste en créditos: <span>{{ starship.cost_in_credits }}</span></li>
+          <li>Velocidad atmosférica: <span>{{ starship.max_atmosphering_speed }}</span></li>
+          <li>Fabricante: <span>{{ starship.manufacturer }}</span></li>
+          <li>Longitud: <span>{{ starship.length }}</span></li>
+          <li>Tripulación: <span>{{ starship.crew }}</span></li>
+        </ul>
+      </div>
     </div>
-    <div class="starship-file-text w-full p-2 py-4 tablet:p-6">
-      <h3 class="font-normal mb-3">{{starship.name }}</h3>
-      <p class="mb-4 laptop:mb-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium velit vero ab maxime. Vel inventore accusantium nobis, soluta doloribus consectetur!</p>
-      <ul class="grid grid-cols-1 laptop:grid-cols-2 gap-2">
-        <li>Model: <span >{{starship.model }}</span></li>
-        <li>Cost in credits: <span >{{ starship.cost_in_credits }}</span></li>
-        <li>Atmosphering Speed: <span >{{ starship.max_atmosphering_speed }}</span></li>
-        <li>Manufacturer: <span >{{ starship.manufacturer }}</span></li>
-        <li>Length: <span >{{ starship.length }}</span></li>
-        <li>Crew: <span >{{ starship.crew }}</span></li>
-      </ul>
-    </div>
-  </div>
-  <button type="button" class="uppercase w-fit mt-4" id="starships-button">
-    <a [routerLink]="['/starships']" routerLinkActive="router-link-active" >Return to Starships</a>
-  </button>
+    <button type="button" class="uppercase w-fit mt-4" id="starships-button">
+      <a [routerLink]="['/starships']" routerLinkActive="router-link-active">Volver al listado</a>
+    </button>
+  </article>
 </section>
 
 <!-- posteriormente cargaremos los componentes para films y pilotos -->

@@ -1,0 +1,48 @@
+section {
+  background-image: url('../../../../assets/img/starwars-background-web.webp');
+  padding: 60px;
+  margin: 0;
+  }
+
+article {
+max-width: 1000px;
+margin:0 auto;
+}
+
+h4 {
+ color: var(--semiblanc);
+ padding: 5px 0;
+ font-weight: 200;
+ border-top: 1px solid var(--semiblanc);
+ border-bottom: 1px solid var(--semiblanc);
+ margin-bottom: 30px;
+}
+
+.nave {
+  padding: 0;
+  display: flex;
+  color: var(--semiblanc)
+}
+
+.contenido {
+  padding: 10px 20px;
+  background-color:rgba(102, 101, 101, 0.246);
+  border-left: 2px solid var(--starwars);
+  border-radius: 0 .6em .6em 0;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  gap: 5px;
+}
+
+img {
+  border-radius: .6em 0 0 .6em;
+}
+
+span, h3 {
+  color: var(--starwars);
+}
