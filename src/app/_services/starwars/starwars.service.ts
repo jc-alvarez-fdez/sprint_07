@@ -40,11 +40,51 @@ export class StarwarsService {
     }
   }
 
-  // más tarde habrá que añadir métodos para los films y los pilotos
+  // pilotos
+  public getPilot(url: string) {
+    return this.http.get<any>(url);
+  }
 
+  public async getPilotPicture(id: string): Promise<string> {
+    try {
+      const response = await fetch(`${this.imageApiUrl}/characters/${id}.jpg`);
 
+      if (response.ok) {
+        const responseData = await response.blob();
+        const imageUrl = URL.createObjectURL(responseData);
+        console.log('Imagen loaded succesfully:', imageUrl);
+        return imageUrl;
+      }
+      else throw new Error('Image not available');
 
+    } catch (error) {
+      console.error('Fetch error:', error);
+      throw error;
+    }
+  }
 
+  // películas
+  public getFilm(url: string) {
+    return this.http.get<any>(url);
+  }
 
+  public async getFilmPicture(id: string): Promise<string> {
+    try {
+      const response = await fetch(`${this.imageApiUrl}/films/${id}.jpg`);
+
+      if (response.ok) {
+        const responseData = await response.blob();
+        const imageUrl = URL.createObjectURL(responseData);
+        // imageUrl ahora contiene la URL de la imagen que puedes asignar a una propiedad en tu componente
+        console.log('Imagen loaded succesfully:', imageUrl);
+        return imageUrl;
+      }
+      else throw new Error('Image not available');
+
+    } catch (error) {
+      console.error('Fetch error:', error);
+      throw error;
+    }
+  }
 
 }

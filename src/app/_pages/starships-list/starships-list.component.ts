@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'
-// infinitescrollmodule posteriormente
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { Starship } from '../../_interfaces/starship.interface';
 import { StarwarsService } from '../../_services';
@@ -13,7 +13,8 @@ import { StarwarsService } from '../../_services';
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule
   ],
   templateUrl: './starships-list.component.html',
   styleUrl: './starships-list.component.scss'

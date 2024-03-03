@@ -3,7 +3,7 @@
     <h4>STARSHIP</h4>
     <div class="nave">
       <div class="col-6">
-        <img class="img-fluid" [src]="starship.imageURL" alt="Starship photo">
+        <img class="img-fluid" [src]="starship.imageURL" alt="Imagen de la nave {{starship.name }}">
       </div>
       <div class="col-6 contenido">
         <h3>{{starship.name }}</h3>
@@ -17,11 +17,29 @@
           <li>Tripulación: <span>{{ starship.crew }}</span></li>
         </ul>
       </div>
+
     </div>
-    <button type="button" class="uppercase w-fit mt-4" id="starships-button">
-      <a [routerLink]="['/starships']" routerLinkActive="router-link-active">Volver al listado</a>
-    </button>
   </article>
 </section>
 
-<!-- posteriormente cargaremos los componentes para films y pilotos -->
+      @defer (when pilotsLoaded){
+        @if (pilots.length > 0) {
+          <app-pilots [pilotsURLs]="pilots"></app-pilots>
+        }
+      } @placeholder {
+        <span>Loading pilots...</span>
+      }
+
+      @defer (when filmsLoaded){
+        @if (films.length > 0) {
+          <app-films [filmsURLs]="films"></app-films>
+        }
+      } @placeholder {
+        <span>Loading films...</span>
+      }
+  <section class="fin">
+      <br>
+      <button type="button" class="btn btn-prinary" >
+        <a [routerLink]="['/starships']" routerLinkActive="router-link-active">Volver al listado</a>
+      </button>
+  </section>

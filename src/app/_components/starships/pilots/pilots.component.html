@@ -1,0 +1,19 @@
+<section>
+  <article>
+    <h4>PILOTOS</h4>
+    <div class="section-cards">
+      <ul>
+        @for (pilot of pilotsArray; track $index) {
+          <li>
+            <div class="section-card-image">
+              <img [src]="pilot.imageUrl" [alt]="pilot.name + ' pilot picture'">
+            </div>
+            <div class="section-card-text">
+              <span>{{ pilot.name }}</span>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  </article>
+</section>

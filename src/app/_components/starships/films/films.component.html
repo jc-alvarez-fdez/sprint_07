@@ -1,0 +1,20 @@
+<section>
+  <article>
+    <h4>FILMS</h4>
+    <div class="section-cards">
+      <ul>
+        @for (film of filmsArray; track $index) {
+          <li>
+            <div class="section-card-image">
+              <img [src]="film.imageUrl" [alt]="film.title + ' film picture'">
+            </div>
+            <div class="section-card-text">
+              <span>{{ film.title }}</span>
+              <span class="film-episode"><br>{{ film.episode }}</span>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  </article>
+</section>

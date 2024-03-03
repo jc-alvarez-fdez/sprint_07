@@ -21,3 +21,15 @@ export interface Starship {
   imageURL: string;
 }
 
+export interface Pilot {
+  id: string;
+  name: string;
+  imageUrl: string;
+}
+
+export interface Film  {
+  id: string;
+  title: string;
+  episode: string;
+  imageUrl: string;
+}
